@@ -1,0 +1,1289 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>株式会社Eco housing | 信頼の構築</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;600;700&family=Noto+Sans+JP:wght@300;400;500;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0d2340;
+    --navy-mid: #1a3a5c;
+    --green: #2d8a4e;
+    --green-light: #4aab68;
+    --amber: #e07b2a;
+    --cream: #f5f0e8;
+    --cream-dark: #ede7d9;
+    --white: #ffffff;
+    --text-dark: #111827;
+    --text-mid: #374151;
+    --text-light: #6b7280;
+    --border: rgba(13,35,64,0.12);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Noto Sans JP', sans-serif;
+    background: var(--cream);
+    color: var(--text-dark);
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* ===== NAV ===== */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(13,35,64,0.97);
+    backdrop-filter: blur(8px);
+    padding: 0 5%;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 68px;
+    border-bottom: 2px solid var(--green);
+  }
+  .nav-logo {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1.1rem;
+    color: var(--white);
+    letter-spacing: 0.05em;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .nav-logo span {
+    display: inline-block;
+    width: 28px; height: 28px;
+    background: var(--green);
+    border-radius: 6px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.9rem;
+  }
+  .nav-links {
+    display: flex; gap: 32px; list-style: none;
+  }
+  .nav-links a {
+    color: rgba(255,255,255,0.8);
+    text-decoration: none;
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    transition: color 0.2s;
+    position: relative;
+  }
+  .nav-links a::after {
+    content: '';
+    position: absolute; bottom: -4px; left: 0; right: 100%;
+    height: 1px; background: var(--green-light);
+    transition: right 0.3s;
+  }
+  .nav-links a:hover { color: var(--white); }
+  .nav-links a:hover::after { right: 0; }
+
+  /* ===== HERO ===== */
+  #hero {
+    min-height: 100vh;
+    background: var(--navy);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    overflow: hidden;
+    padding-top: 68px;
+  }
+  .hero-bg-pattern {
+    position: absolute; inset: 0;
+    background-image:
+      repeating-linear-gradient(0deg, transparent, transparent 59px, rgba(255,255,255,0.03) 60px),
+      repeating-linear-gradient(90deg, transparent, transparent 59px, rgba(255,255,255,0.03) 60px);
+    pointer-events: none;
+  }
+  .hero-bg-accent {
+    position: absolute;
+    bottom: -100px; right: -100px;
+    width: 600px; height: 600px;
+    border: 1px solid rgba(45,138,78,0.2);
+    border-radius: 50%;
+  }
+  .hero-bg-accent::before {
+    content: '';
+    position: absolute;
+    inset: 40px;
+    border: 1px solid rgba(45,138,78,0.15);
+    border-radius: 50%;
+  }
+  .hero-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 6% 80px 8%;
+    position: relative; z-index: 2;
+  }
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(45,138,78,0.15);
+    border: 1px solid rgba(45,138,78,0.4);
+    color: var(--green-light);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    padding: 6px 14px;
+    border-radius: 2px;
+    margin-bottom: 32px;
+    width: fit-content;
+    animation: fadeInUp 0.8s ease both;
+  }
+  .hero-badge::before { content: '■'; font-size: 0.5rem; }
+  .hero-title {
+    font-family: 'Noto Serif JP', serif;
+    font-size: clamp(2.2rem, 4vw, 3.4rem);
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1.35;
+    margin-bottom: 24px;
+    animation: fadeInUp 0.8s 0.1s ease both;
+  }
+  .hero-title em {
+    font-style: normal;
+    color: var(--green-light);
+  }
+  .hero-sub {
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.65);
+    margin-bottom: 48px;
+    max-width: 400px;
+    animation: fadeInUp 0.8s 0.2s ease both;
+  }
+  .hero-cta {
+    display: flex; gap: 16px; flex-wrap: wrap;
+    animation: fadeInUp 0.8s 0.3s ease both;
+  }
+  .btn-primary {
+    background: var(--green);
+    color: var(--white);
+    padding: 14px 32px;
+    border: none;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex; align-items: center; gap: 8px;
+    transition: background 0.2s, transform 0.2s;
+    border-radius: 2px;
+  }
+  .btn-primary:hover { background: var(--green-light); transform: translateY(-1px); }
+  .btn-outline {
+    border: 1px solid rgba(255,255,255,0.3);
+    color: var(--white);
+    padding: 14px 32px;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex; align-items: center; gap: 8px;
+    transition: border-color 0.2s, background 0.2s;
+    border-radius: 2px;
+  }
+  .btn-outline:hover { border-color: rgba(255,255,255,0.7); background: rgba(255,255,255,0.05); }
+
+  .hero-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 6%;
+    position: relative; z-index: 2;
+    animation: fadeInRight 1s 0.3s ease both;
+  }
+  .hero-pillars {
+    display: flex; flex-direction: column; gap: 16px;
+  }
+  .pillar-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-left: 3px solid var(--green);
+    padding: 20px 24px;
+    border-radius: 2px;
+    transition: background 0.2s, border-left-color 0.2s;
+  }
+  .pillar-card:nth-child(2) { border-left-color: var(--amber); }
+  .pillar-card:nth-child(3) { border-left-color: #c8a84b; }
+  .pillar-card:hover { background: rgba(255,255,255,0.08); }
+  .pillar-card h3 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1.05rem;
+    color: var(--white);
+    margin-bottom: 6px;
+  }
+  .pillar-card p {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.55);
+  }
+
+  /* ===== SECTION BASE ===== */
+  section { padding: 100px 8%; }
+  .section-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    color: var(--green);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .section-title {
+    font-family: 'Noto Serif JP', serif;
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    font-weight: 700;
+    color: var(--navy);
+    line-height: 1.4;
+    margin-bottom: 20px;
+  }
+  .section-desc {
+    font-size: 0.95rem;
+    color: var(--text-light);
+    max-width: 560px;
+    line-height: 1.85;
+  }
+  .divider {
+    width: 48px; height: 3px;
+    background: var(--green);
+    margin: 24px 0;
+  }
+
+  /* ===== SAFETY ===== */
+  #safety {
+    background: var(--white);
+  }
+  .safety-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    margin-top: 60px;
+  }
+  .safety-items {
+    display: flex; flex-direction: column; gap: 28px;
+  }
+  .safety-item {
+    display: flex; gap: 20px; align-items: flex-start;
+    padding: 24px;
+    background: var(--cream);
+    border-radius: 4px;
+    border: 1px solid var(--border);
+    transition: box-shadow 0.2s, transform 0.2s;
+  }
+  .safety-item:hover { box-shadow: 0 8px 32px rgba(13,35,64,0.08); transform: translateY(-2px); }
+  .safety-icon {
+    width: 48px; height: 48px; flex-shrink: 0;
+    background: var(--navy);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.4rem;
+  }
+  .safety-item h3 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1rem;
+    color: var(--navy);
+    margin-bottom: 6px;
+    font-weight: 600;
+  }
+  .safety-item p { font-size: 0.83rem; color: var(--text-light); }
+
+  .safety-gate {
+    background: var(--navy);
+    border-radius: 8px;
+    padding: 40px;
+    color: var(--white);
+  }
+  .safety-gate h3 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    color: var(--white);
+  }
+  .gate-flow {
+    display: flex; flex-direction: column; gap: 0;
+  }
+  .gate-step {
+    display: flex; gap: 16px; align-items: center;
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .gate-step:last-child { border-bottom: none; }
+  .gate-num {
+    width: 32px; height: 32px;
+    background: var(--green);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.8rem;
+    font-weight: 700;
+    flex-shrink: 0;
+    color: var(--white);
+  }
+  .gate-step p { font-size: 0.85rem; color: rgba(255,255,255,0.75); }
+  .gate-step strong { color: var(--white); font-weight: 600; }
+  .gate-verdict {
+    margin-top: 20px;
+    padding: 16px;
+    background: rgba(45,138,78,0.15);
+    border: 1px solid rgba(45,138,78,0.3);
+    border-radius: 4px;
+    font-size: 0.83rem;
+    color: var(--green-light);
+    text-align: center;
+    font-weight: 500;
+  }
+
+  /* ===== EVALUATION ===== */
+  #evaluation {
+    background: var(--cream-dark);
+  }
+  .eval-compare {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    margin-top: 60px;
+  }
+  .eval-card {
+    padding: 40px;
+    border-radius: 6px;
+    position: relative;
+  }
+  .eval-card.old {
+    background: var(--white);
+    border: 2px dashed #d1c4b0;
+    opacity: 0.8;
+  }
+  .eval-card.new {
+    background: var(--navy);
+    color: var(--white);
+  }
+  .eval-tag {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    padding: 4px 12px;
+    border-radius: 2px;
+    margin-bottom: 24px;
+  }
+  .eval-card.old .eval-tag { background: #e5d5c0; color: #7a6b58; }
+  .eval-card.new .eval-tag { background: var(--green); color: var(--white); }
+  .eval-card h3 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1.1rem;
+    margin-bottom: 16px;
+  }
+  .eval-card.old h3 { color: var(--navy); }
+  .eval-card.new h3 { color: var(--white); }
+  .eval-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .eval-list li {
+    font-size: 0.85rem;
+    display: flex; align-items: flex-start; gap: 10px;
+  }
+  .eval-card.old .eval-list li { color: var(--text-light); }
+  .eval-card.new .eval-list li { color: rgba(255,255,255,0.75); }
+  .eval-list li::before { flex-shrink: 0; margin-top: 2px; }
+  .eval-card.old .eval-list li::before { content: '✕'; color: #c0392b; }
+  .eval-card.new .eval-list li::before { content: '✓'; color: var(--green-light); }
+
+  /* ===== CAREER ===== */
+  #career {
+    background: var(--white);
+  }
+  .career-stages {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    margin-top: 60px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  .career-stage {
+    padding: 36px 28px;
+    border-right: 1px solid var(--border);
+    position: relative;
+    transition: background 0.2s;
+  }
+  .career-stage:last-child { border-right: none; }
+  .career-stage:hover { background: var(--cream); }
+  .stage-level {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    color: var(--green);
+    margin-bottom: 8px;
+  }
+  .stage-name {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 16px;
+  }
+  .stage-role {
+    font-size: 0.78rem;
+    color: var(--amber);
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+  .stage-desc {
+    font-size: 0.8rem;
+    color: var(--text-light);
+    line-height: 1.7;
+  }
+  .stage-arrow {
+    position: absolute;
+    top: 50%; right: -10px;
+    transform: translateY(-50%);
+    width: 20px; height: 20px;
+    background: var(--green);
+    clip-path: polygon(0 25%, 70% 25%, 70% 0, 100% 50%, 70% 100%, 70% 75%, 0 75%);
+    z-index: 2;
+  }
+  .career-stage:last-child .stage-arrow { display: none; }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    margin-top: 48px;
+  }
+  .skill-card {
+    padding: 28px;
+    background: var(--cream);
+    border-radius: 4px;
+    border: 1px solid var(--border);
+    border-top: 3px solid var(--navy);
+    transition: box-shadow 0.2s;
+  }
+  .skill-card:hover { box-shadow: 0 6px 24px rgba(13,35,64,0.1); }
+  .skill-card h4 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1rem;
+    color: var(--navy);
+    margin-bottom: 10px;
+    font-weight: 600;
+  }
+  .skill-card p { font-size: 0.82rem; color: var(--text-light); }
+
+  /* ===== FOREMAN ===== */
+  #foreman {
+    background: var(--navy);
+    color: var(--white);
+  }
+  #foreman .section-label { color: var(--green-light); }
+  #foreman .section-title { color: var(--white); }
+  #foreman .divider { background: var(--green-light); }
+  #foreman .section-desc { color: rgba(255,255,255,0.6); }
+  .foreman-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    margin-top: 60px;
+  }
+  .foreman-details {
+    display: flex; flex-direction: column; gap: 20px;
+  }
+  .foreman-row {
+    display: flex;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .foreman-row-label {
+    background: rgba(255,255,255,0.06);
+    padding: 20px 24px;
+    width: 120px;
+    flex-shrink: 0;
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--green-light);
+    display: flex; align-items: center;
+    border-right: 1px solid rgba(255,255,255,0.1);
+  }
+  .foreman-row-val {
+    padding: 20px 24px;
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.8);
+    display: flex; align-items: center;
+  }
+  .salary-box {
+    background: rgba(45,138,78,0.1);
+    border: 1px solid rgba(45,138,78,0.25);
+    border-radius: 6px;
+    padding: 36px;
+  }
+  .salary-box h3 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1.1rem;
+    color: var(--white);
+    margin-bottom: 24px;
+  }
+  .salary-bar {
+    margin-bottom: 20px;
+  }
+  .salary-bar-label {
+    display: flex; justify-content: space-between;
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 8px;
+  }
+  .salary-bar-track {
+    height: 10px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 99px;
+    overflow: hidden;
+  }
+  .salary-bar-fill {
+    height: 100%;
+    border-radius: 99px;
+    background: linear-gradient(90deg, var(--green), var(--green-light));
+  }
+  .salary-bonus {
+    height: 100%;
+    border-radius: 99px;
+    background: linear-gradient(90deg, var(--amber), #f5a34c);
+  }
+  .salary-note {
+    margin-top: 20px;
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.45);
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding-top: 16px;
+  }
+
+  /* ===== COMMUNITY ===== */
+  #community {
+    background: var(--cream-dark);
+  }
+  .community-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 60px;
+  }
+  .comm-card {
+    background: var(--white);
+    border-radius: 6px;
+    padding: 36px 28px;
+    border: 1px solid var(--border);
+    text-align: center;
+    transition: box-shadow 0.3s, transform 0.3s;
+  }
+  .comm-card:hover { box-shadow: 0 12px 40px rgba(13,35,64,0.1); transform: translateY(-4px); }
+  .comm-icon {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    display: block;
+  }
+  .comm-card h3 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1.1rem;
+    color: var(--navy);
+    margin-bottom: 12px;
+    font-weight: 600;
+  }
+  .comm-card p { font-size: 0.83rem; color: var(--text-light); line-height: 1.8; }
+
+  /* ===== PROMISE ===== */
+  #promise {
+    background: var(--navy);
+    text-align: center;
+  }
+  #promise .section-label { color: var(--green-light); }
+  #promise .section-title { color: var(--white); }
+  #promise .divider { margin: 24px auto; }
+  #promise .section-desc { color: rgba(255,255,255,0.6); margin: 0 auto 60px; }
+  .promise-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 6px;
+    overflow: hidden;
+    margin-bottom: 60px;
+  }
+  .promise-item {
+    background: rgba(13,35,64,0.7);
+    padding: 40px 24px;
+    transition: background 0.2s;
+  }
+  .promise-item:hover { background: rgba(45,138,78,0.1); }
+  .promise-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    color: var(--green-light);
+    margin-bottom: 12px;
+  }
+  .promise-item h3 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1.15rem;
+    color: var(--white);
+    margin-bottom: 12px;
+  }
+  .promise-item p { font-size: 0.8rem; color: rgba(255,255,255,0.5); }
+  .promise-cta-text {
+    font-family: 'Noto Serif JP', serif;
+    font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+    color: var(--white);
+    line-height: 1.6;
+    margin-bottom: 40px;
+  }
+  .promise-cta-text em { font-style: normal; color: var(--green-light); }
+
+  /* ===== FOOTER ===== */
+  footer {
+    background: #050f1d;
+    color: rgba(255,255,255,0.4);
+    padding: 48px 8% 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .footer-logo {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1rem;
+    color: rgba(255,255,255,0.7);
+  }
+  footer p { font-size: 0.78rem; }
+
+  /* ===== ANIMATIONS ===== */
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeInRight {
+    from { opacity: 0; transform: translateX(24px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 960px) {
+    #hero { grid-template-columns: 1fr; }
+    .hero-right { display: none; }
+    .safety-grid, .foreman-inner, .eval-compare { grid-template-columns: 1fr; gap: 40px; }
+    .career-stages { grid-template-columns: 1fr 1fr; }
+    .community-cards, .promise-grid { grid-template-columns: 1fr; }
+    .skills-grid { grid-template-columns: 1fr; }
+    .nav-links { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <span>E</span>
+    株式会社 Eco housing
+  </div>
+  <ul class="nav-links">
+    <li><a href="#safety">安全への取り組み</a></li>
+    <li><a href="#business">事業内容</a></li>
+    <li><a href="#evaluation">評価制度</a></li>
+    <li><a href="#career">キャリア</a></li>
+    <li><a href="#community">地域共存</a></li>
+    <li><a href="#promise">私たちの誓い</a></li>
+    <li><a href="#company">会社概要</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg-pattern"></div>
+  <div class="hero-bg-accent"></div>
+  <div class="hero-left">
+    <div class="hero-badge">株式会社 エコハウジング</div>
+    <h1 class="hero-title">
+      不動産と建設、<br>
+      <em>ふたつの専門性</em>で<br>
+      暮らしを支える会社
+    </h1>
+    <p class="hero-sub">宅地建物取引業による不動産の売買・賃貸仲介から、建設現場を支える雑用工・多能工まで。「安心・安全・信頼」を軸に、現場のあらゆるニーズに応えるプロフェッショナル集団です。</p>
+    <div class="hero-cta">
+      <a href="#promise" class="btn-primary">私たちの誓いを見る →</a>
+      <a href="#career" class="btn-outline">キャリアを見る</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-pillars">
+      <div class="pillar-card">
+        <h3>🏠 不動産事業部</h3>
+        <p>宅地建物取引業（神奈川県知事免許）。土地・建物の売買・賃貸仲介、物件管理まで幅広く対応。</p>
+      </div>
+      <div class="pillar-card">
+        <h3>🔨 建設事業部</h3>
+        <p>建築現場を支える雑用工・多能工チーム。資材搬入・清掃・軽作業請負まで、現場の「あとちょっと」を解決。</p>
+      </div>
+      <div class="pillar-card">
+        <h3>🛡️ 私たちの約束</h3>
+        <p>安全第一・公平な評価・地域との共存。信頼される現場づくりを日常の行動で実現します。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BUSINESS -->
+<section id="business" style="background: var(--white);">
+  <div class="section-label">OUR BUSINESS</div>
+  <h2 class="section-title">私たちが手がける<br>ふたつの事業</h2>
+  <div class="divider"></div>
+  <p class="section-desc">エコハウジングは「不動産事業部」と「建設事業部」の二軸で、お客様・発注者・地域社会のニーズに応えます。</p>
+
+  <div class="reveal" style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 60px;">
+
+    <!-- 不動産事業部 -->
+    <div style="border: 2px solid var(--navy); border-radius: 8px; overflow: hidden;">
+      <div style="background: var(--navy); padding: 28px 32px;">
+        <div style="font-size: 0.72rem; font-weight: 700; letter-spacing: 0.15em; color: var(--green-light); margin-bottom: 10px;">DIVISION 01</div>
+        <h3 style="font-family: 'Noto Serif JP', serif; font-size: 1.5rem; color: var(--white); margin-bottom: 8px;">不動産事業部</h3>
+        <p style="font-size: 0.82rem; color: rgba(255,255,255,0.55);">宅地建物取引業 ／ 神奈川県知事（4）第26414号</p>
+      </div>
+      <div style="padding: 32px; background: var(--cream);">
+        <p style="font-size: 0.9rem; color: var(--text-mid); line-height: 1.85; margin-bottom: 24px;">
+          <strong style="color: var(--navy);">宅地建物取引業</strong>とは、国土交通大臣または都道府県知事の免許を受けた事業者のみが行える、不動産の売買・賃貸に関する専門業務です。お客様の「売りたい・買いたい・貸したい・借りたい」をプロが安心・安全にサポートします。
+        </p>
+        <div style="display: flex; flex-direction: column; gap: 12px;">
+          <div style="display: flex; align-items: flex-start; gap: 12px; padding: 14px; background: var(--white); border-radius: 4px; border-left: 3px solid var(--green);">
+            <span style="font-size: 1.2rem; flex-shrink:0;">🏡</span>
+            <div>
+              <p style="font-size: 0.85rem; font-weight: 700; color: var(--navy); margin-bottom: 2px;">売買仲介</p>
+              <p style="font-size: 0.78rem; color: var(--text-light);">宅地・一戸建て・マンション・土地の売買仲介。重要事項の説明から契約まで一貫サポート。</p>
+            </div>
+          </div>
+          <div style="display: flex; align-items: flex-start; gap: 12px; padding: 14px; background: var(--white); border-radius: 4px; border-left: 3px solid var(--green);">
+            <span style="font-size: 1.2rem; flex-shrink:0;">🔑</span>
+            <div>
+              <p style="font-size: 0.85rem; font-weight: 700; color: var(--navy); margin-bottom: 2px;">賃貸仲介</p>
+              <p style="font-size: 0.78rem; color: var(--text-light);">住宅・事務所・店舗の賃貸借仲介。オーナー様からの入居者募集・物件管理も対応。</p>
+            </div>
+          </div>
+          <div style="display: flex; align-items: flex-start; gap: 12px; padding: 14px; background: var(--white); border-radius: 4px; border-left: 3px solid var(--green);">
+            <span style="font-size: 1.2rem; flex-shrink:0;">📋</span>
+            <div>
+              <p style="font-size: 0.85rem; font-weight: 700; color: var(--navy); margin-bottom: 2px;">不動産コンサルティング</p>
+              <p style="font-size: 0.78rem; color: var(--text-light);">資産活用のご相談・土地活用提案・不動産に関するあらゆるご要望に対応します。</p>
+            </div>
+          </div>
+        </div>
+        <div style="margin-top: 20px; padding: 14px; background: rgba(13,35,64,0.05); border-radius: 4px; text-align: center;">
+          <p style="font-size: 0.78rem; color: var(--text-light);">主な取引先</p>
+          <p style="font-size: 0.85rem; font-weight: 600; color: var(--navy); margin-top: 4px;">個人のお客様 ／ 法人オーナー ／ 土地所有者</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 建設事業部 -->
+    <div style="border: 2px solid var(--amber); border-radius: 8px; overflow: hidden;">
+      <div style="background: #4a3010; padding: 28px 32px;">
+        <div style="font-size: 0.72rem; font-weight: 700; letter-spacing: 0.15em; color: #f5c06a; margin-bottom: 10px;">DIVISION 02</div>
+        <h3 style="font-family: 'Noto Serif JP', serif; font-size: 1.5rem; color: var(--white); margin-bottom: 8px;">建設事業部</h3>
+        <p style="font-size: 0.82rem; color: rgba(255,255,255,0.55);">雑用工・多能工 ／ 工事現場の潤滑油</p>
+      </div>
+      <div style="padding: 32px; background: var(--cream);">
+        <p style="font-size: 0.9rem; color: var(--text-mid); line-height: 1.85; margin-bottom: 24px;">
+          建築・建設現場で発生する<strong style="color: #4a3010;">予測できない急な作業への対応や事前準備</strong>を先回りして行い、工事全体の工程がスムーズに流れるよう「困りごとのない現場環境を整えること」が私たちの仕事です。幅広い業務に対応できる多能工チームが、<strong style="color: #4a3010;">現場の潤滑油</strong>として専門工事会社様を全力でサポートします。
+        </p>
+
+        <!-- 4 service blocks -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 20px;">
+          <div style="padding: 16px; background: var(--white); border-radius: 4px; border-left: 3px solid var(--amber);">
+            <p style="font-size: 0.85rem; font-weight: 700; color: var(--navy); margin-bottom: 6px;">🏗️ 雑工事</p>
+            <p style="font-size: 0.76rem; color: var(--text-light); line-height: 1.7;">基礎工事前の地鎮祭準備・整地、躯体工事中の場内片付け清掃、足場繋ぎ・外壁作業補助、建設用エレベーター操作など。次工程の専門業者が快適に作業を開始できるよう先回り準備。</p>
+          </div>
+          <div style="padding: 16px; background: var(--white); border-radius: 4px; border-left: 3px solid var(--amber);">
+            <p style="font-size: 0.85rem; font-weight: 700; color: var(--navy); margin-bottom: 6px;">🛡️ 養生工事</p>
+            <p style="font-size: 0.76rem; color: var(--text-light); line-height: 1.7;">新築・リニューアル・手直し工事の際、完成部分を汚れ・傷から守る養生施工。柱鉄骨梁養生、スラブ養生、サッシ養生、エレベーター養生など、細かな箇所も用途に合わせて臨機応変に対応。</p>
+          </div>
+          <div style="padding: 16px; background: var(--white); border-radius: 4px; border-left: 3px solid var(--amber);">
+            <p style="font-size: 0.85rem; font-weight: 700; color: var(--navy); margin-bottom: 6px;">✨ 竣工クリーニング</p>
+            <p style="font-size: 0.76render; color: var(--text-light); line-height: 1.7;">オフィスビル・マンションの引渡し前に床・天井・壁・扉を隅々まで美装。場内荒清掃→諸検査前クリーニング→内覧前クリーニング→引渡し前最終クリーニングまで一貫対応。ワックス掛けも含む。</p>
+          </div>
+          <div style="padding: 16px; background: var(--white); border-radius: 4px; border-left: 3px solid var(--amber);">
+            <p style="font-size: 0.85rem; font-weight: 700; color: var(--navy); margin-bottom: 6px;">🔩 仮設・資材搬入</p>
+            <p style="font-size: 0.76rem; color: var(--text-light); line-height: 1.7;">親綱・水平ネット・垂直ネット・足場等の仮設工事、資材の搬入・搬出・揚重補助、什器組立・設置。突発的な作業にも専門業者に代わって迅速対応。</p>
+          </div>
+        </div>
+
+        <!-- 工程対応 timeline -->
+        <div style="background: var(--navy); border-radius: 6px; padding: 20px 24px; margin-bottom: 16px;">
+          <p style="font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; color: var(--green-light); margin-bottom: 12px;">CONSTRUCTION PHASE SUPPORT — 着工から引渡しまで</p>
+          <div style="display: flex; align-items: center; gap: 0; flex-wrap: wrap;">
+            <div style="background: rgba(255,255,255,0.08); border-radius: 3px; padding: 8px 12px; font-size: 0.72rem; color: rgba(255,255,255,0.75); text-align:center; flex:1; min-width:80px;">基礎工事前<br><span style="color:var(--amber); font-size:0.65rem;">整地・準備</span></div>
+            <div style="color: var(--amber); padding: 0 4px; font-size: 0.8rem;">▶</div>
+            <div style="background: rgba(255,255,255,0.08); border-radius: 3px; padding: 8px 12px; font-size: 0.72rem; color: rgba(255,255,255,0.75); text-align:center; flex:1; min-width:80px;">躯体工事<br><span style="color:var(--amber); font-size:0.65rem;">雑工・養生</span></div>
+            <div style="color: var(--amber); padding: 0 4px; font-size: 0.8rem;">▶</div>
+            <div style="background: rgba(255,255,255,0.08); border-radius: 3px; padding: 8px 12px; font-size: 0.72rem; color: rgba(255,255,255,0.75); text-align:center; flex:1; min-width:80px;">仕上工事<br><span style="color:var(--amber); font-size:0.65rem;">クリーニング</span></div>
+            <div style="color: var(--amber); padding: 0 4px; font-size: 0.8rem;">▶</div>
+            <div style="background: rgba(45,138,78,0.2); border: 1px solid var(--green); border-radius: 3px; padding: 8px 12px; font-size: 0.72rem; color: rgba(255,255,255,0.9); text-align:center; flex:1; min-width:80px;">引渡し<br><span style="color:var(--green-light); font-size:0.65rem;">是正・完了</span></div>
+          </div>
+        </div>
+
+        <div style="margin-top: 16px; padding: 14px; background: rgba(74,48,16,0.06); border-radius: 4px; text-align: center;">
+          <p style="font-size: 0.78rem; color: var(--text-light);">主な取引先</p>
+          <p style="font-size: 0.85rem; font-weight: 600; color: var(--navy); margin-top: 4px;">ゼネコン ／ 工務店 ／ サブコン ／ イベント運営会社 ／ 店舗オーナー</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom tagline -->
+  <div class="reveal" style="margin-top: 40px; background: var(--navy); border-radius: 6px; padding: 32px 40px; text-align: center;">
+    <p style="font-family: 'Noto Serif JP', serif; font-size: 1.05rem; color: rgba(255,255,255,0.9); line-height: 1.8;">
+      「安心安全、現場の<em style="font-style:normal; color: var(--green-light);">『あとちょっと』</em>を解決する」<br>
+      着工から引渡しまで、経験豊富な多能工チームが現場のあらゆるニーズに<em style="font-style:normal; color: var(--amber);">迅速かつ高品質</em>に対応します。
+    </p>
+  </div>
+</section>
+
+<!-- SAFETY -->
+<section id="safety">
+  <div class="section-label">SAFETY FIRST</div>
+  <h2 class="section-title">「安全第一」を<br>文化にする日常の習慣</h2>
+  <div class="divider"></div>
+  <p class="section-desc">安全は特別な日だけのものではありません。毎朝の習慣、装備の徹底、整理整頓——それを積み重ねることで事故ゼロを実現します。</p>
+
+  <div class="safety-grid reveal">
+    <div class="safety-items">
+      <div class="safety-item">
+        <div class="safety-icon">🔍</div>
+        <div>
+          <h3>KY・危険予知活動</h3>
+          <p>毎朝のKY活動を徹底し、小さな油断や慣れを見逃しません。危険を予知することが事故防止の第一歩です。</p>
+        </div>
+      </div>
+      <div class="safety-item">
+        <div class="safety-icon">🦺</div>
+        <div>
+          <h3>保護具の完全着用</h3>
+          <p>ヘルメット・安全帯・手袋。ルール遵守の徹底が、命を守る最前線となります。</p>
+        </div>
+      </div>
+      <div class="safety-item">
+        <div class="safety-icon">✨</div>
+        <div>
+          <h3>5Sの日常化</h3>
+          <p>整理・整頓・清掃・清潔・躾。綺麗な現場は事故を防ぎ、品質を高めます。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="safety-gate">
+      <h3>すべての前提となる「安全ゲート」制度</h3>
+      <div class="gate-flow">
+        <div class="gate-step">
+          <div class="gate-num">1</div>
+          <p><strong>現場での安全行動チェック</strong><br>毎日の安全確認を記録・管理</p>
+        </div>
+        <div class="gate-step">
+          <div class="gate-num">2</div>
+          <p><strong>安全ゲートの通過判定</strong><br>重大違反なし → 技術・品質評価へ進む</p>
+        </div>
+        <div class="gate-step">
+          <div class="gate-num">✕</div>
+          <p style="color:rgba(255,100,100,0.8)"><strong>ゲート閉鎖</strong><br>重大な安全ルール違反 → 評価係数上限適用</p>
+        </div>
+      </div>
+      <div class="gate-verdict">安全を犠牲にしたスピードや技術は、決して評価されません。</div>
+    </div>
+  </div>
+</section>
+
+<!-- EVALUATION -->
+<section id="evaluation">
+  <div class="section-label">FAIR EVALUATION</div>
+  <h2 class="section-title">曖昧さを排除した<br>「納得度の高い」評価制度</h2>
+  <div class="divider"></div>
+  <p class="section-desc">「頑張っている」「態度が良い」という属人的・抽象的な評価から脱却。数値と事実に基づく客観的な評価で、職人の努力に正しく報います。</p>
+
+  <div class="eval-compare reveal">
+    <div class="eval-card old">
+      <span class="eval-tag">従来の現場</span>
+      <h3>属人的・抽象的な評価</h3>
+      <ul class="eval-list">
+        <li>「頑張っている」という感覚評価</li>
+        <li>「態度が良い」という曖昧な基準</li>
+        <li>なぜ評価が低いのか分からない</li>
+        <li>上司の主観に左右される</li>
+      </ul>
+    </div>
+    <div class="eval-card new">
+      <span class="eval-tag">私たちの現場</span>
+      <h3>事実と数値に基づく客観評価</h3>
+      <ul class="eval-list">
+        <li>手戻り率 1%未満の明確な数値基準</li>
+        <li>標準作業時間の達成率で測定</li>
+        <li>安全書類の提出期限厳守を評価</li>
+        <li>誰もが納得できる透明な基準</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- CAREER -->
+<section id="career">
+  <div class="section-label">CAREER PATH</div>
+  <h2 class="section-title">国の基準と連動した<br>キャリアパスの可視化</h2>
+  <div class="divider"></div>
+  <p class="section-desc">経験と技能に応じた、確実な処遇アップを約束します。建設キャリアアップシステムと連動した4段階のキャリアパスで、将来を見通せます。</p>
+
+  <div class="career-stages reveal">
+    <div class="career-stage">
+      <div class="stage-level">LEVEL 1</div>
+      <div class="stage-name">見習い</div>
+      <div class="stage-role">初級技能者</div>
+      <p class="stage-desc">安全に・正確に・指示通りに。基本作業の習得、清掃・整理整頓、安全ルールの徹底。</p>
+      <div class="stage-arrow"></div>
+    </div>
+    <div class="career-stage">
+      <div class="stage-level">LEVEL 2</div>
+      <div class="stage-name">一人前</div>
+      <div class="stage-role">中堅技能者</div>
+      <p class="stage-desc">安定して作業を任せられる。作業スピードと品質の安定、他職種との調整力。</p>
+      <div class="stage-arrow"></div>
+    </div>
+    <div class="career-stage">
+      <div class="stage-level">LEVEL 3</div>
+      <div class="stage-name">職長</div>
+      <div class="stage-role">職長クラス</div>
+      <p class="stage-desc">現場を動かし、若手を育てる。現場全体の段取り、安全指導、元請との調整。</p>
+      <div class="stage-arrow"></div>
+    </div>
+    <div class="career-stage">
+      <div class="stage-level">LEVEL 4</div>
+      <div class="stage-name">幹部</div>
+      <div class="stage-role">登録基幹技能者</div>
+      <p class="stage-desc">現場の司令塔。高度マネジメントで現場全体を指揮・統括する存在。</p>
+    </div>
+  </div>
+
+  <div class="skills-grid reveal" style="margin-top: 60px;">
+    <div style="grid-column: 1 / -1; margin-bottom: 8px;">
+      <h3 style="font-family: 'Noto Serif JP', serif; font-size: 1.4rem; color: var(--navy);">現場を支える職人の「4つのコア能力」</h3>
+    </div>
+    <div class="skill-card">
+      <h4>🔧 技術力</h4>
+      <p>精度とスピード。図面の理解と基本技能の習熟。現場の"核"となる力。</p>
+    </div>
+    <div class="skill-card">
+      <h4>🦺 安全行動</h4>
+      <p>命を守る行動。KY実施と保護具の着用。現場の"文化"を形成する。</p>
+    </div>
+    <div class="skill-card">
+      <h4>⭐ 品質</h4>
+      <p>美しい仕上がりと手戻りゼロ。後工程への配慮。会社の"ブランド"。</p>
+    </div>
+    <div class="skill-card">
+      <h4>📅 段取り</h4>
+      <p>準備力と調整力。工期を守り現場を止めない。現場を"動かす力"。</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOREMAN -->
+<section id="foreman">
+  <div class="section-label">FOREMAN SYSTEM</div>
+  <h2 class="section-title">責任に報いる<br>「職長制度」と確かな処遇</h2>
+  <div class="divider"></div>
+  <p class="section-desc">責任が増える分、明確な手当で還元。長く現場で活躍し、後輩を育てる人材を会社全体で高く評価します。</p>
+
+  <div class="foreman-inner reveal">
+    <div class="foreman-details">
+      <div class="foreman-row">
+        <div class="foreman-row-label">役割</div>
+        <div class="foreman-row-val">現場の指揮官として安全管理・人材育成・工程管理を担う</div>
+      </div>
+      <div class="foreman-row">
+        <div class="foreman-row-label">権限</div>
+        <div class="foreman-row-val">若手への安全指導・元請との直接調整・段取り全般の責任</div>
+      </div>
+      <div class="foreman-row">
+        <div class="foreman-row-label">評価</div>
+        <div class="foreman-row-val">「報連相」による透明なコミュニケーションと実績数値で評価</div>
+      </div>
+      <div class="foreman-row">
+        <div class="foreman-row-label">支援</div>
+        <div class="foreman-row-val">建設キャリアアップシステムと連動し、国の基準で技能を証明</div>
+      </div>
+    </div>
+
+    <div class="salary-box">
+      <h3>💰 職長手当のイメージ</h3>
+      <div class="salary-bar">
+        <div class="salary-bar-label"><span>基本給</span><span>安定した収入基盤</span></div>
+        <div class="salary-bar-track"><div class="salary-bar-fill" style="width:70%"></div></div>
+      </div>
+      <div class="salary-bar">
+        <div class="salary-bar-label"><span>職長手当</span><span>月額 1万円〜5万円以上</span></div>
+        <div class="salary-bar-track"><div class="salary-bar-fill salary-bonus" style="width:40%"></div></div>
+      </div>
+      <div class="salary-bar">
+        <div class="salary-bar-label"><span>技能評価連動</span><span>実績に応じて加算</span></div>
+        <div class="salary-bar-track"><div class="salary-bar-fill" style="width:55%; background: linear-gradient(90deg, #c8a84b, #e8c87a)"></div></div>
+      </div>
+      <div class="salary-note">責任に応じた明確な報酬設計。曖昧な査定は一切ありません。</div>
+    </div>
+  </div>
+</section>
+
+<!-- COMMUNITY -->
+<section id="community">
+  <div class="section-label">COMMUNITY COEXISTENCE</div>
+  <h2 class="section-title">地域に愛される現場づくり</h2>
+  <div class="divider"></div>
+  <p class="section-desc">現場の振る舞い一つが、会社の「信頼」に直結します。マナーと配慮で、近隣住民と共存できる現場を目指します。</p>
+
+  <div class="community-cards reveal">
+    <div class="comm-card">
+      <span class="comm-icon">👋</span>
+      <h3>挨拶</h3>
+      <p>近隣住民の方への笑顔での挨拶。コミュニケーションがトラブルを防ぎ、信頼関係を築きます。</p>
+    </div>
+    <div class="comm-card">
+      <span class="comm-icon">🏗️</span>
+      <h3>休憩所の配慮</h3>
+      <p>休憩場所や喫煙所は外部から見えにくい位置に設置。周囲の方に威圧感を与えない配慮を徹底します。</p>
+    </div>
+    <div class="comm-card">
+      <span class="comm-icon">👔</span>
+      <h3>身だしなみ</h3>
+      <p>清潔な作業服と整った髪型。プロフェッショナルとしての誇りが、地域からの信頼につながります。</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROMISE -->
+<section id="promise">
+  <div class="section-label">OUR PROMISE</div>
+  <h2 class="section-title">安心安全への誓い</h2>
+  <div class="divider"></div>
+  <p class="section-desc">私たちは、関わるすべての人に「安心」と「安全」を提供する、信頼の構築企業です。</p>
+
+  <div class="promise-grid reveal">
+    <div class="promise-item">
+      <div class="promise-label">SAFETY</div>
+      <h3>安全</h3>
+      <p>妥協なき安全基準をすべての前提とします。</p>
+    </div>
+    <div class="promise-item">
+      <div class="promise-label">EVALUATION</div>
+      <h3>評価</h3>
+      <p>納得度の高い明確な基準で、職人の努力に報います。</p>
+    </div>
+    <div class="promise-item">
+      <div class="promise-label">GROWTH</div>
+      <h3>成長</h3>
+      <p>キャリアパスを明示し、次世代のリーダーを育成します。</p>
+    </div>
+    <div class="promise-item">
+      <div class="promise-label">COEXISTENCE</div>
+      <h3>共存</h3>
+      <p>徹底したマナーと配慮で、地域社会と共存します。</p>
+    </div>
+  </div>
+
+  <p class="promise-cta-text">
+    満たされた職人だけが、<br>
+    本当に信頼される<em>完璧な現場</em>を創り上げることができる。
+  </p>
+  <a href="#safety" class="btn-primary" style="margin: 0 auto; display: w-fit; width: fit-content;">取り組みを詳しく見る →</a>
+</section>
+
+<!-- COMPANY PROFILE -->
+<section id="company" style="background: var(--cream);">
+  <div class="section-label">COMPANY PROFILE</div>
+  <h2 class="section-title">会社概要</h2>
+  <div class="divider"></div>
+
+  <div class="reveal" style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; margin-top: 60px;">
+    <!-- TABLE -->
+    <div style="border: 1px solid var(--border); border-radius: 6px; overflow: hidden;">
+      <div style="background: var(--navy); padding: 20px 28px;">
+        <p style="color: rgba(255,255,255,0.5); font-size: 0.72rem; letter-spacing: 0.15em; font-weight: 700;">CORPORATE INFORMATION</p>
+      </div>
+      <table style="width: 100%; border-collapse: collapse; font-size: 0.88rem;">
+        <tbody>
+          <tr style="border-bottom: 1px solid var(--border);">
+            <th style="padding: 18px 24px; text-align: left; font-weight: 600; color: var(--navy); background: var(--cream-dark); width: 38%; white-space: nowrap; font-family: 'Noto Serif JP', serif;">商号</th>
+            <td style="padding: 18px 24px; color: var(--text-mid);">株式会社エコハウジング</td>
+          </tr>
+          <tr style="border-bottom: 1px solid var(--border);">
+            <th style="padding: 18px 24px; text-align: left; font-weight: 600; color: var(--navy); background: var(--cream-dark); font-family: 'Noto Serif JP', serif;">所在地</th>
+            <td style="padding: 18px 24px; color: var(--text-mid);">神奈川県海老名市河原口5-4-52<br>メルベイユ105</td>
+          </tr>
+          <tr style="border-bottom: 1px solid var(--border);">
+            <th style="padding: 18px 24px; text-align: left; font-weight: 600; color: var(--navy); background: var(--cream-dark); font-family: 'Noto Serif JP', serif;">取締役会長</th>
+            <td style="padding: 18px 24px; color: var(--text-mid);">大貫 八重子</td>
+          </tr>
+          <tr style="border-bottom: 1px solid var(--border);">
+            <th style="padding: 18px 24px; text-align: left; font-weight: 600; color: var(--navy); background: var(--cream-dark); font-family: 'Noto Serif JP', serif;">代表取締役社長</th>
+            <td style="padding: 18px 24px; color: var(--text-mid);">大貫 純</td>
+          </tr>
+          <tr style="border-bottom: 1px solid var(--border);">
+            <th style="padding: 18px 24px; text-align: left; font-weight: 600; color: var(--navy); background: var(--cream-dark); font-family: 'Noto Serif JP', serif;">事業内容</th>
+            <td style="padding: 18px 24px; color: var(--text-mid);">
+              <div style="display:flex; flex-direction:column; gap:8px;">
+                <span style="display:inline-flex; align-items:center; gap:8px;">
+                  <span style="background:var(--navy); color:white; font-size:0.7rem; font-weight:700; padding:2px 8px; border-radius:2px;">不動産事業部</span>
+                  宅地建物取引業（売買・賃貸仲介）
+                </span>
+                <span style="display:inline-flex; align-items:center; gap:8px;">
+                  <span style="background:#4a3010; color:white; font-size:0.7rem; font-weight:700; padding:2px 8px; border-radius:2px;">建設事業部</span>
+                  雑用工・多能工（建築現場補助・軽作業請負）
+                </span>
+              </div>
+            </td>
+          </tr>
+          <tr style="border-bottom: 1px solid var(--border);">
+            <th style="padding: 18px 24px; text-align: left; font-weight: 600; color: var(--navy); background: var(--cream-dark); font-family: 'Noto Serif JP', serif;">設立</th>
+            <td style="padding: 18px 24px; color: var(--text-mid);">1983年10月</td>
+          </tr>
+          <tr style="border-bottom: 1px solid var(--border);">
+            <th style="padding: 18px 24px; text-align: left; font-weight: 600; color: var(--navy); background: var(--cream-dark); font-family: 'Noto Serif JP', serif;">資本金</th>
+            <td style="padding: 18px 24px; color: var(--text-mid);">1,000万円</td>
+          </tr>
+          <tr style="border-bottom: 1px solid var(--border);">
+            <th style="padding: 18px 24px; text-align: left; font-weight: 600; color: var(--navy); background: var(--cream-dark); font-family: 'Noto Serif JP', serif;">TEL / FAX</th>
+            <td style="padding: 18px 24px; color: var(--text-mid);">
+              046-206-5001 / 046-206-5002
+            </td>
+          </tr>
+          <tr style="border-bottom: 1px solid var(--border);">
+            <th style="padding: 18px 24px; text-align: left; font-weight: 600; color: var(--navy); background: var(--cream-dark); font-family: 'Noto Serif JP', serif;">E-mail</th>
+            <td style="padding: 18px 24px; color: var(--text-mid);">
+              <a href="mailto:ecohaujing@gmail.com" style="color: var(--green); text-decoration: none; font-weight: 500;">ecohaujing@gmail.com</a>
+            </td>
+          </tr>
+          <tr>
+            <th style="padding: 18px 24px; text-align: left; font-weight: 600; color: var(--navy); background: var(--cream-dark); font-family: 'Noto Serif JP', serif;">宅建免許番号</th>
+            <td style="padding: 18px 24px; color: var(--text-mid);">
+              <span style="display: inline-block; background: var(--navy); color: var(--white); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.06em; padding: 4px 12px; border-radius: 2px; margin-bottom: 4px;">神奈川県知事（4）第26414号</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- RIGHT: MAP PLACEHOLDER + MESSAGE -->
+    <div style="display: flex; flex-direction: column; gap: 28px;">
+      <!-- Map area -->
+      <div style="background: var(--navy); border-radius: 6px; overflow: hidden; aspect-ratio: 16/9; position: relative; display: flex; align-items: center; justify-content: center;">
+        <iframe
+          src="https://www.google.com/maps?q=神奈川県海老名市河原口5-4-52&output=embed"
+          width="100%" height="100%"
+          style="border:0; position: absolute; inset: 0;"
+          allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+        <!-- Fallback label in case iframe is blocked -->
+        <div style="position: relative; z-index: 1; text-align: center; color: rgba(255,255,255,0.4); font-size: 0.8rem; pointer-events: none; display: flex; flex-direction: column; gap: 8px; align-items: center;">
+          <span style="font-size: 2rem;">📍</span>
+          <span>神奈川県海老名市河原口5-4-52</span>
+        </div>
+      </div>
+
+      <!-- Contact quick info -->
+      <div style="background: var(--white); border: 1px solid var(--border); border-radius: 4px; padding: 24px 28px; display: flex; flex-direction: column; gap: 12px;">
+        <p style="font-size: 0.72rem; font-weight: 700; letter-spacing: 0.15em; color: var(--navy);">CONTACT</p>
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <span style="font-size: 1.2rem;">📞</span>
+          <div>
+            <p style="font-size: 0.72rem; color: var(--text-light);">TEL</p>
+            <a href="tel:0462065001" style="font-size: 1.05rem; font-weight: 700; color: var(--navy); text-decoration: none; letter-spacing: 0.05em;">046-206-5001</a>
+          </div>
+        </div>
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <span style="font-size: 1.2rem;">📠</span>
+          <div>
+            <p style="font-size: 0.72rem; color: var(--text-light);">FAX</p>
+            <p style="font-size: 1rem; color: var(--text-mid); font-weight: 600;">046-206-5002</p>
+          </div>
+        </div>
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <span style="font-size: 1.2rem;">✉️</span>
+          <div>
+            <p style="font-size: 0.72rem; color: var(--text-light);">E-mail</p>
+            <a href="mailto:ecohaujing@gmail.com" style="font-size: 0.9rem; color: var(--green); font-weight: 600; text-decoration: none;">ecohaujing@gmail.com</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- License badge -->
+      <div style="background: var(--white); border: 1px solid var(--border); border-left: 4px solid var(--green); border-radius: 4px; padding: 24px 28px;">
+        <p style="font-size: 0.72rem; font-weight: 700; letter-spacing: 0.15em; color: var(--green); margin-bottom: 10px;">CERTIFIED</p>
+        <p style="font-family: 'Noto Serif JP', serif; font-size: 1rem; color: var(--navy); font-weight: 600; line-height: 1.6;">宅地建物取引業者として<br>国土交通省・神奈川県知事の認可を受けた、信頼ある事業者です。</p>
+      </div>
+
+      <!-- Tagline -->
+      <div style="background: var(--navy); border-radius: 4px; padding: 24px 28px; text-align: center;">
+        <p style="font-family: 'Noto Serif JP', serif; font-size: 0.95rem; color: rgba(255,255,255,0.85); line-height: 1.8;">私たちは、関わるすべての人に<br><span style="color: var(--green-light); font-weight: 700;">「安心」と「安全」</span>を提供する、<br>信頼の構築企業です。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">株式会社エコハウジング</div>
+  <p>© 2026 株式会社エコハウジング All rights reserved.</p>
+</footer>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        // Stagger children
+        const children = entry.target.querySelectorAll('.safety-item, .pillar-card, .career-stage, .skill-card, .comm-card, .promise-item, .eval-card');
+        children.forEach((child, i) => {
+          child.style.transitionDelay = `${i * 0.08}s`;
+          child.style.opacity = '0';
+          child.style.transform = 'translateY(16px)';
+          child.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+          setTimeout(() => {
+            child.style.opacity = '1';
+            child.style.transform = 'translateY(0)';
+          }, 100 + i * 80);
+        });
+      }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => observer.observe(el));
+
+  // Nav active
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => {
+      if (window.scrollY >= s.offsetTop - 100) current = s.getAttribute('id');
+    });
+    navLinks.forEach(a => {
+      a.style.color = a.getAttribute('href') === '#' + current ? 'white' : '';
+    });
+  });
+</script>
+</body>
+</html>
