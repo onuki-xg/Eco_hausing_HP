@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>株式会社Eco housing | 信頼の構築</title>
+<title>（株）エコハウジング | 清掃・多能工・現場支援</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;600;700&family=Noto+Sans+JP:wght@300;400;500;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
 <style>
@@ -669,6 +669,11 @@
     .skills-grid { grid-template-columns: 1fr; }
     .nav-links { display: none; }
   }
+
+  @media (max-width: 960px) {
+    #business .reveal { grid-template-columns: 1fr !important; }
+  }
+
 </style>
 </head>
 <body>
@@ -676,16 +681,14 @@
 <nav>
   <div class="nav-logo">
     <span>E</span>
-    株式会社 Eco housing
+    株式会社エコハウジング
   </div>
   <ul class="nav-links">
-    <li><a href="#safety">安全への取り組み</a></li>
     <li><a href="#business">事業内容</a></li>
-    <li><a href="#evaluation">評価制度</a></li>
-    <li><a href="#career">キャリア</a></li>
+    <li><a href="#safety">安全への取り組み</a></li>
+    <li><a href="#evaluation">品質・評価</a></li>
+    <li><a href="#career">人材育成</a></li>
     <li><a href="#community">地域共存</a></li>
-    <li><a href="#promise">私たちの誓い</a></li>
-    <li><a href="#new-business" style="color:#7aaaff;">新規事業</a></li>
     <li><a href="#company">会社概要</a></li>
   </ul>
 </nav>
@@ -694,35 +697,37 @@
   <div class="hero-bg-pattern"></div>
   <div class="hero-bg-accent"></div>
   <div class="hero-left">
-    <div class="hero-badge">株式会社 エコハウジング</div>
+    <div class="hero-badge">（株）エコハウジング</div>
     <h1 class="hero-title">
-      不動産と建設、<br>
-      <em>ふたつの専門性</em>で<br>
-      暮らしを支える会社
+      現場を支え、<br>
+      <em>建設を前へ。</em>
     </h1>
-    <p class="hero-sub">宅地建物取引業による不動産の売買・賃貸仲介から、建設現場を支える雑用工・多能工まで。「安心・安全・信頼」を軸に、現場のあらゆるニーズに応えるプロフェッショナル集団です。</p>
+    <p class="hero-sub">
+      （株）エコハウジングは、清掃・多能工・現場支援を通じて、
+      建設現場の安全、品質、円滑な進行を支える現場サポート会社です。
+    </p>
     <div class="hero-cta">
-      <a href="#promise" class="btn-primary">私たちの誓いを見る →</a>
-      <a href="#career" class="btn-outline">キャリアを見る</a>
+      <a href="#business" class="btn-primary">事業内容を見る →</a>
+      <a href="#company" class="btn-outline">会社概要を見る</a>
     </div>
   </div>
   <div class="hero-right">
     <div class="hero-pillars">
       <div class="pillar-card">
-        <h3>🏠 不動産事業部</h3>
-        <p>宅地建物取引業（神奈川県知事免許）。土地・建物の売買・賃貸仲介、物件管理まで幅広く対応。</p>
+        <h3>✨ 清掃</h3>
+        <p>日常清掃、場内清掃、竣工前清掃まで、工程と現場状況に合わせて柔軟に対応します。</p>
       </div>
       <div class="pillar-card">
-        <h3>🔨 建設事業部</h3>
-        <p>建築現場を支える雑用工・多能工チーム。資材搬入・清掃・軽作業請負まで、現場の「あとちょっと」を解決。</p>
+        <h3>🔨 多能工</h3>
+        <p>養生、資材移動、搬入搬出補助、片付け、各種作業補助など幅広い業務に対応します。</p>
       </div>
       <div class="pillar-card">
-        <h3>✨ 3Dホログラム事業部</h3>
-        <p>次世代の空間演出「3D GHOST®」。店舗・イベント・商業施設向け裸眼3Dホログラムサイネージ。Life is Style 代理店。</p>
+        <h3>🏗️ 現場支援</h3>
+        <p>突発作業や人手不足に対応し、元請会社・専門工事会社が施工に集中できる環境を整えます。</p>
       </div>
       <div class="pillar-card">
-        <h3>🛡️ 私たちの約束</h3>
-        <p>安全第一・公平な評価・地域との共存。信頼される現場づくりを日常の行動で実現します。</p>
+        <h3>🛡️ 安全・品質</h3>
+        <p>安全ルールと現場マナーを徹底し、継続して安心して任せていただける体制づくりに努めます。</p>
       </div>
     </div>
   </div>
@@ -730,114 +735,76 @@
 <!-- BUSINESS -->
 <section id="business" style="background: var(--white);">
   <div class="section-label">OUR BUSINESS</div>
-  <h2 class="section-title">私たちが手がける<br>事業</h2>
+  <h2 class="section-title">建設現場を支える<br>3つの事業</h2>
   <div class="divider"></div>
-  <p class="section-desc">エコハウジングは「不動産事業部」「建設事業部」「3Dホログラム事業部」の三軸で、お客様・発注者・地域社会のニーズに応えます。</p>
-  <div class="reveal" style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 60px;">
-    <!-- 不動産事業部 -->
-    <div style="border: 2px solid var(--navy); border-radius: 8px; overflow: hidden;">
-      <div style="background: var(--navy); padding: 28px 32px;">
-        <div style="font-size: 0.72rem; font-weight: 700; letter-spacing: 0.15em; color: var(--green-light); margin-bottom: 10px;">DIVISION 01</div>
-        <h3 style="font-family: 'Noto Serif JP', serif; font-size: 1.5rem; color: var(--white); margin-bottom: 8px;">不動産事業部</h3>
-        <p style="font-size: 0.82rem; color: rgba(255,255,255,0.55);">宅地建物取引業 ／ 神奈川県知事（4）第26414号</p>
+  <p class="section-desc">
+    （株）エコハウジングは、清掃・多能工・現場支援を通じて、
+    建設現場の安全性と生産性を高め、着工から引渡しまで円滑な現場運営を支援します。
+  </p>
+
+  <div class="reveal" style="display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:60px;">
+    <div style="border:2px solid var(--green); border-radius:8px; overflow:hidden; background:var(--cream);">
+      <div style="background:var(--green); padding:28px 30px;">
+        <div style="font-size:.72rem; font-weight:700; letter-spacing:.15em; color:rgba(255,255,255,.75); margin-bottom:10px;">SERVICE 01</div>
+        <h3 style="font-family:'Noto Serif JP',serif; font-size:1.5rem; color:#fff;">清掃</h3>
       </div>
-      <div style="padding: 32px; background: var(--cream);">
-        <p style="font-size: 0.9rem; color: var(--text-mid); line-height: 1.85; margin-bottom: 24px;">
-          <strong style="color: var(--navy);">宅地建物取引業</strong>とは、国土交通大臣または都道府県知事の免許を受けた事業者のみが行える、不動産の売買・賃貸に関する専門業務です。お客様の「売りたい・買いたい・貸したい・借りたい」をプロが安心・安全にサポートします。
+      <div style="padding:30px;">
+        <p style="font-size:.9rem; color:var(--text-mid); line-height:1.9; margin-bottom:22px;">
+          現場の安全と品質を支える清掃サービスです。工程や進捗に合わせ、
+          作業しやすく整理された現場環境を維持します。
         </p>
-        <div style="display: flex; flex-direction: column; gap: 12px;">
-          <div style="display: flex; align-items: flex-start; gap: 12px; padding: 14px; background: var(--white); border-radius: 4px; border-left: 3px solid var(--green);">
-            <span style="font-size: 1.2rem; flex-shrink:0;">🏡</span>
-            <div>
-              <p style="font-size: 0.85rem; font-weight: 700; color: var(--navy); margin-bottom: 2px;">売買仲介</p>
-              <p style="font-size: 0.78rem; color: var(--text-light);">宅地・一戸建て・マンション・土地の売買仲介。重要事項の説明から契約まで一貫サポート。</p>
-            </div>
-          </div>
-          <div style="display: flex; align-items: flex-start; gap: 12px; padding: 14px; background: var(--white); border-radius: 4px; border-left: 3px solid var(--green);">
-            <span style="font-size: 1.2rem; flex-shrink:0;">🔑</span>
-            <div>
-              <p style="font-size: 0.85rem; font-weight: 700; color: var(--navy); margin-bottom: 2px;">賃貸仲介</p>
-              <p style="font-size: 0.78rem; color: var(--text-light);">住宅・事務所・店舗の賃貸借仲介。オーナー様からの入居者募集・物件管理も対応。</p>
-            </div>
-          </div>
-          <div style="display: flex; align-items: flex-start; gap: 12px; padding: 14px; background: var(--white); border-radius: 4px; border-left: 3px solid var(--green);">
-            <span style="font-size: 1.2rem; flex-shrink:0;">📋</span>
-            <div>
-              <p style="font-size: 0.85rem; font-weight: 700; color: var(--navy); margin-bottom: 2px;">不動産コンサルティング</p>
-              <p style="font-size: 0.78rem; color: var(--text-light);">資産活用のご相談・土地活用提案・不動産に関するあらゆるご要望に対応します。</p>
-            </div>
-          </div>
-        </div>
-        <div style="margin-top: 20px; padding: 14px; background: rgba(13,35,64,0.05); border-radius: 4px; text-align: center;">
-          <p style="font-size: 0.78rem; color: var(--text-light);">主な取引先</p>
-          <p style="font-size: 0.85rem; font-weight: 600; color: var(--navy); margin-top: 4px;">個人のお客様 ／ 法人オーナー ／ 土地所有者</p>
-        </div>
+        <ul style="list-style:none; display:flex; flex-direction:column; gap:12px; font-size:.82rem; color:var(--text-light);">
+          <li>✓ 場内清掃・片付け</li>
+          <li>✓ 工程ごとの荒清掃</li>
+          <li>✓ 検査前・引渡し前清掃</li>
+          <li>✓ 養生撤去後の清掃</li>
+        </ul>
       </div>
     </div>
-    <!-- 建設事業部 -->
-    <div style="border: 2px solid var(--amber); border-radius: 8px; overflow: hidden;">
-      <div style="background: #4a3010; padding: 28px 32px;">
-        <div style="font-size: 0.72rem; font-weight: 700; letter-spacing: 0.15em; color: #f5c06a; margin-bottom: 10px;">DIVISION 02</div>
-        <h3 style="font-family: 'Noto Serif JP', serif; font-size: 1.5rem; color: var(--white); margin-bottom: 8px;">建設事業部</h3>
-        <p style="font-size: 0.82rem; color: rgba(255,255,255,0.55);">雑用工・多能工 ／ 工事現場の潤滑油</p>
+
+    <div style="border:2px solid var(--amber); border-radius:8px; overflow:hidden; background:var(--cream);">
+      <div style="background:#4a3010; padding:28px 30px;">
+        <div style="font-size:.72rem; font-weight:700; letter-spacing:.15em; color:#f5c06a; margin-bottom:10px;">SERVICE 02</div>
+        <h3 style="font-family:'Noto Serif JP',serif; font-size:1.5rem; color:#fff;">多能工</h3>
       </div>
-      <div style="padding: 32px; background: var(--cream);">
-        <p style="font-size: 0.9rem; color: var(--text-mid); line-height: 1.85; margin-bottom: 24px;">
-          建築・建設現場で発生する<strong style="color: #4a3010;">予測できない急な作業への対応や事前準備</strong>を先回りして行い、工事全体の工程がスムーズに流れるよう「困りごとのない現場環境を整えること」が私たちの仕事です。幅広い業務に対応できる多能工チームが、<strong style="color: #4a3010;">現場の潤滑油</strong>として専門工事会社様を全力でサポートします。
+      <div style="padding:30px;">
+        <p style="font-size:.9rem; color:var(--text-mid); line-height:1.9; margin-bottom:22px;">
+          現場ごとに異なる幅広い作業へ柔軟に対応します。
+          専門工事の周辺業務を担い、職人の皆様が本来の施工に集中できる環境をつくります。
         </p>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 20px;">
-          <div style="padding: 16px; background: var(--white); border-radius: 4px; border-left: 3px solid var(--amber);">
-            <p style="font-size: 0.85rem; font-weight: 700; color: var(--navy); margin-bottom: 6px;">🏗️ 雑工事</p>
-            <p style="font-size: 0.76rem; color: var(--text-light); line-height: 1.7;">基礎工事前の地鎮祭準備・整地、躯体工事中の場内片付け清掃、足場繋ぎ・外壁作業補助、建設用エレベーター操作など。次工程の専門業者が快適に作業を開始できるよう先回り準備。</p>
-          </div>
-          <div style="padding: 16px; background: var(--white); border-radius: 4px; border-left: 3px solid var(--amber);">
-            <p style="font-size: 0.85rem; font-weight: 700; color: var(--navy); margin-bottom: 6px;">🛡️ 養生工事</p>
-            <p style="font-size: 0.76rem; color: var(--text-light); line-height: 1.7;">新築・リニューアル・手直し工事の際、完成部分を汚れ・傷から守る養生施工。柱鉄骨梁養生、スラブ養生、サッシ養生、エレベーター養生など、細かな箇所も用途に合わせて臨機応変に対応。</p>
-          </div>
-          <div style="padding: 16px; background: var(--white); border-radius: 4px; border-left: 3px solid var(--amber);">
-            <p style="font-size: 0.85rem; font-weight: 700; color: var(--navy); margin-bottom: 6px;">✨ 竣工クリーニング</p>
-            <p style="font-size: 0.76rem; color: var(--text-light); line-height: 1.7;">オフィスビル・マンションの引渡し前に床・天井・壁・扉を隅々まで美装。場内荒清掃→諸検査前クリーニング→内覧前クリーニング→引渡し前最終クリーニングまで一貫対応。ワックス掛けも含む。</p>
-          </div>
-          <div style="padding: 16px; background: var(--white); border-radius: 4px; border-left: 3px solid var(--amber);">
-            <p style="font-size: 0.85rem; font-weight: 700; color: var(--navy); margin-bottom: 6px;">🔩 仮設・資材搬入</p>
-            <p style="font-size: 0.76rem; color: var(--text-light); line-height: 1.7;">親綱・水平ネット・垂直ネット・足場等の仮設工事、資材の搬入・搬出・揚重補助、什器組立・設置。突発的な作業にも専門業者に代わって迅速対応。</p>
-          </div>
-        </div>
-        <div style="background: var(--navy); border-radius: 6px; padding: 20px 24px; margin-bottom: 16px;">
-          <p style="font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; color: var(--green-light); margin-bottom: 12px;">CONSTRUCTION PHASE SUPPORT — 着工から引渡しまで</p>
-          <div style="display: flex; align-items: center; gap: 0; flex-wrap: wrap;">
-            <div style="background: rgba(255,255,255,0.08); border-radius: 3px; padding: 8px 12px; font-size: 0.72rem; color: rgba(255,255,255,0.75); text-align:center; flex:1; min-width:80px;">基礎工事前<br><span style="color:var(--amber); font-size:0.65rem;">整地・準備</span></div>
-            <div style="color: var(--amber); padding: 0 4px; font-size: 0.8rem;">▶</div>
-            <div style="background: rgba(255,255,255,0.08); border-radius: 3px; padding: 8px 12px; font-size: 0.72rem; color: rgba(255,255,255,0.75); text-align:center; flex:1; min-width:80px;">躯体工事<br><span style="color:var(--amber); font-size:0.65rem;">雑工・養生</span></div>
-            <div style="color: var(--amber); padding: 0 4px; font-size: 0.8rem;">▶</div>
-            <div style="background: rgba(255,255,255,0.08); border-radius: 3px; padding: 8px 12px; font-size: 0.72rem; color: rgba(255,255,255,0.75); text-align:center; flex:1; min-width:80px;">仕上工事<br><span style="color:var(--amber); font-size:0.65rem;">クリーニング</span></div>
-            <div style="color: var(--amber); padding: 0 4px; font-size: 0.8rem;">▶</div>
-            <div style="background: rgba(45,138,78,0.2); border: 1px solid var(--green); border-radius: 3px; padding: 8px 12px; font-size: 0.72rem; color: rgba(255,255,255,0.9); text-align:center; flex:1; min-width:80px;">引渡し<br><span style="color:var(--green-light); font-size:0.65rem;">是正・完了</span></div>
-          </div>
-        </div>
-        <div style="margin-top: 16px; padding: 14px; background: rgba(74,48,16,0.06); border-radius: 4px; text-align: center;">
-          <p style="font-size: 0.78rem; color: var(--text-light);">主な取引先</p>
-          <p style="font-size: 0.85rem; font-weight: 600; color: var(--navy); margin-top: 4px;">ゼネコン ／ 工務店 ／ サブコン ／ イベント運営会社 ／ 店舗オーナー</p>
-        </div>
+        <ul style="list-style:none; display:flex; flex-direction:column; gap:12px; font-size:.82rem; color:var(--text-light);">
+          <li>✓ 養生・撤去作業</li>
+          <li>✓ 資材移動・搬入搬出補助</li>
+          <li>✓ 職人・専門工事の作業補助</li>
+          <li>✓ 各種軽作業・突発作業</li>
+        </ul>
+      </div>
+    </div>
+
+    <div style="border:2px solid var(--navy); border-radius:8px; overflow:hidden; background:var(--cream);">
+      <div style="background:var(--navy); padding:28px 30px;">
+        <div style="font-size:.72rem; font-weight:700; letter-spacing:.15em; color:var(--green-light); margin-bottom:10px;">SERVICE 03</div>
+        <h3 style="font-family:'Noto Serif JP',serif; font-size:1.5rem; color:#fff;">現場支援</h3>
+      </div>
+      <div style="padding:30px;">
+        <p style="font-size:.9rem; color:var(--text-mid); line-height:1.9; margin-bottom:22px;">
+          人手不足や突発的な作業など、現場ごとの課題に応じて必要な支援を提供します。
+          現場が止まらないための実務サポートを重視しています。
+        </p>
+        <ul style="list-style:none; display:flex; flex-direction:column; gap:12px; font-size:.82rem; color:var(--text-light);">
+          <li>✓ 工程進行に伴う作業支援</li>
+          <li>✓ 現場内の整理・環境整備</li>
+          <li>✓ 人員不足時の応援対応</li>
+          <li>✓ 現場ごとの個別相談</li>
+        </ul>
       </div>
     </div>
   </div>
-  <!-- DIVISION 03 teaser -->
-  <div class="reveal" style="margin-top: 32px; border: 2px solid #3a6aff; border-radius: 8px; overflow: hidden;">
-    <div style="background: #0a0f2e; padding: 28px 32px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px;">
-      <div>
-        <div style="font-size: 0.72rem; font-weight: 700; letter-spacing: 0.15em; color: #7aaaff; margin-bottom: 10px;">DIVISION 03 — NEW BUSINESS</div>
-        <h3 style="font-family: 'Noto Serif JP', serif; font-size: 1.5rem; color: #fff; margin-bottom: 8px;">3Dホログラム事業部</h3>
-        <p style="font-size: 0.82rem; color: rgba(255,255,255,0.55);">裸眼3Dホログラムサイネージ「3D GHOST®」／ Life is Style 代理店</p>
-      </div>
-      <a href="#new-business" style="display:inline-flex; align-items:center; gap:8px; background:#3a6aff; color:#fff; padding:12px 28px; border-radius:4px; text-decoration:none; font-size:0.85rem; font-weight:700; letter-spacing:0.06em; white-space:nowrap; transition:opacity .2s;" onmouseover="this.style.opacity='.8'" onmouseout="this.style.opacity='1'">詳細を見る →</a>
-    </div>
-  </div>
-  <!-- Bottom tagline -->
-  <div class="reveal" style="margin-top: 32px; background: var(--navy); border-radius: 6px; padding: 32px 40px; text-align: center;">
-    <p style="font-family: 'Noto Serif JP', serif; font-size: 1.05rem; color: rgba(255,255,255,0.9); line-height: 1.8;">
-      「安心安全、現場の<em style="font-style:normal; color: var(--green-light);">『あとちょっと』</em>を解決する」<br>
-      着工から引渡しまで、経験豊富な多能工チームが現場のあらゆるニーズに<em style="font-style:normal; color: var(--amber);">迅速かつ高品質</em>に対応します。
+
+  <div class="reveal" style="margin-top:32px; background:var(--navy); border-radius:6px; padding:32px 40px; text-align:center;">
+    <p style="font-family:'Noto Serif JP',serif; font-size:1.05rem; color:rgba(255,255,255,.9); line-height:1.9;">
+      清掃・多能工・現場支援を一括してご相談いただけます。<br>
+      現場の状況と工程を確認し、必要な作業と人員をご提案します。
     </p>
   </div>
 </section>
@@ -846,7 +813,7 @@
   <div class="section-label">SAFETY FIRST</div>
   <h2 class="section-title">「安全第一」を<br>文化にする日常の習慣</h2>
   <div class="divider"></div>
-  <p class="section-desc">安全は特別な日だけのものではありません。毎朝の習慣、装備の徹底、整理整頓——それを積み重ねることで事故ゼロを実現します。</p>
+  <p class="section-desc">安全は特別な日だけのものではありません。毎朝の習慣、装備の徹底、整理整頓——それを積み重ねることで事故防止につなげます。</p>
   <div class="safety-grid reveal">
     <div class="safety-items">
       <div class="safety-item">
@@ -896,10 +863,10 @@
   <div class="section-label">FAIR EVALUATION</div>
   <h2 class="section-title">曖昧さを排除した<br>「納得度の高い」評価制度</h2>
   <div class="divider"></div>
-  <p class="section-desc">「頑張っている」「態度が良い」という属人的・抽象的な評価から脱却。数値と事実に基づく客観的な評価で、職人の努力に正しく報います。</p>
+  <p class="section-desc">安全、品質、工程遵守、報告・連絡・相談など、現場で求められる行動を明確にし、継続的な改善と人材育成につなげます。</p>
   <div class="eval-compare reveal">
     <div class="eval-card old">
-      <span class="eval-tag">従来の現場</span>
+      <span class="eval-tag">改善前</span>
       <h3>属人的・抽象的な評価</h3>
       <ul class="eval-list">
         <li>「頑張っている」という感覚評価</li>
@@ -909,13 +876,13 @@
       </ul>
     </div>
     <div class="eval-card new">
-      <span class="eval-tag">私たちの現場</span>
+      <span class="eval-tag">（株）エコハウジング</span>
       <h3>事実と数値に基づく客観評価</h3>
       <ul class="eval-list">
-        <li>手戻り率 1%未満の明確な数値基準</li>
-        <li>標準作業時間の達成率で測定</li>
-        <li>安全書類の提出期限厳守を評価</li>
-        <li>誰もが納得できる透明な基準</li>
+        <li>作業品質と手戻り状況を確認</li>
+        <li>作業時間と工程遵守の状況を確認</li>
+        <li>安全ルールと必要書類の遵守を確認</li>
+        <li>業務内容に応じた明確な評価基準</li>
       </ul>
     </div>
   </div>
@@ -923,9 +890,9 @@
 <!-- CAREER -->
 <section id="career">
   <div class="section-label">CAREER PATH</div>
-  <h2 class="section-title">国の基準と連動した<br>キャリアパスの可視化</h2>
+  <h2 class="section-title">経験と役割に応じた<br>キャリアパスの可視化</h2>
   <div class="divider"></div>
-  <p class="section-desc">経験と技能に応じた、確実な処遇アップを約束します。建設キャリアアップシステムと連動した4段階のキャリアパスで、将来を見通せます。</p>
+  <p class="section-desc">経験、技能、役割に応じた成長機会を整備します。段階的なキャリア形成を支援し、現場を支える人材を育成します。</p>
   <div class="career-stages reveal">
     <div class="career-stage">
       <div class="stage-level">LEVEL 1</div>
@@ -951,7 +918,7 @@
     <div class="career-stage">
       <div class="stage-level">LEVEL 4</div>
       <div class="stage-name">幹部</div>
-      <div class="stage-role">登録基幹技能者</div>
+      <div class="stage-role">現場管理・幹部候補</div>
       <p class="stage-desc">現場の司令塔。高度マネジメントで現場全体を指揮・統括する存在。</p>
     </div>
   </div>
@@ -999,7 +966,7 @@
       </div>
       <div class="foreman-row">
         <div class="foreman-row-label">支援</div>
-        <div class="foreman-row-val">建設キャリアアップシステムと連動し、国の基準で技能を証明</div>
+        <div class="foreman-row-val">資格取得や技能向上を支援し、継続的な成長につなげる</div>
       </div>
     </div>
     <div class="salary-box">
@@ -1009,14 +976,14 @@
         <div class="salary-bar-track"><div class="salary-bar-fill" style="width:70%"></div></div>
       </div>
       <div class="salary-bar">
-        <div class="salary-bar-label"><span>職長手当</span><span>月額 1万円〜5万円以上</span></div>
+        <div class="salary-bar-label"><span>職長手当</span><span>役割・実績に応じて支給</span></div>
         <div class="salary-bar-track"><div class="salary-bar-fill salary-bonus" style="width:40%"></div></div>
       </div>
       <div class="salary-bar">
         <div class="salary-bar-label"><span>技能評価連動</span><span>実績に応じて加算</span></div>
         <div class="salary-bar-track"><div class="salary-bar-fill" style="width:55%; background: linear-gradient(90deg, #c8a84b, #e8c87a)"></div></div>
       </div>
-      <div class="salary-note">責任に応じた明確な報酬設計。曖昧な査定は一切ありません。</div>
+      <div class="salary-note">責任に応じた明確な報酬設計。役割と実績を踏まえて適正に評価します。</div>
     </div>
   </div>
 </section>
@@ -1059,7 +1026,7 @@
     <div class="promise-item">
       <div class="promise-label">EVALUATION</div>
       <h3>評価</h3>
-      <p>納得度の高い明確な基準で、職人の努力に報います。</p>
+      <p>納得度の高い明確な基準で、現場品質の向上につなげます。</p>
     </div>
     <div class="promise-item">
       <div class="promise-label">GROWTH</div>
@@ -1073,8 +1040,8 @@
     </div>
   </div>
   <p class="promise-cta-text">
-    満たされた職人だけが、<br>
-    本当に信頼される<em>完璧な現場</em>を創り上げることができる。
+    一つひとつの作業を丁寧に積み重ね、<br>
+    安全で信頼される<em>現場環境</em>をつくります。
   </p>
   <a href="#safety" class="btn-primary" style="margin: 0 auto; display: w-fit; width: fit-content;">取り組みを詳しく見る →</a>
 </section>
@@ -1085,7 +1052,7 @@
     <div style="font-size: 0.72rem; font-weight: 700; letter-spacing: 0.2em; color: #7aaaff; text-transform: uppercase; margin-bottom: 16px;">NEW BUSINESS</div>
     <h2 style="font-family: 'Noto Serif JP', serif; font-size: clamp(1.8rem, 3vw, 2.5rem); font-weight: 700; color: #fff; line-height: 1.4; margin-bottom: 20px;">新規事業</h2>
     <div style="width: 48px; height: 3px; background: #3a6aff; margin: 0 0 24px;"></div>
-    <p style="font-size: 0.95rem; color: rgba(255,255,255,0.5); max-width: 560px; line-height: 1.85;">エコハウジングの新たな挑戦。次世代の空間演出テクノロジー「3D GHOST®」をご提案します。</p>
+    <p style="font-size: 0.95rem; color: rgba(255,255,255,0.5); max-width: 560px; line-height: 1.85;">（株）エコハウジングが取り扱う次世代の空間演出テクノロジー「3D GHOST®」をご提案します。</p>
   </div>
   <!-- DIVISION 03 hologram section -->
   <section id="hologram" style="background:#060606; color:#fff; font-family:inherit;">
@@ -1856,16 +1823,16 @@
             <td style="padding: 18px 24px; color: var(--text-mid);">
               <div style="display:flex; flex-direction:column; gap:8px;">
                 <span style="display:inline-flex; align-items:center; gap:8px;">
-                  <span style="background:var(--navy); color:white; font-size:0.7rem; font-weight:700; padding:2px 8px; border-radius:2px;">不動産事業部</span>
-                  宅地建物取引業（売買・賃貸仲介）
+                  <span style="background:var(--green); color:white; font-size:0.7rem; font-weight:700; padding:2px 8px; border-radius:2px;">清掃</span>
+                  建設現場の場内清掃・工程清掃・引渡し前清掃
                 </span>
                 <span style="display:inline-flex; align-items:center; gap:8px;">
-                  <span style="background:#4a3010; color:white; font-size:0.7rem; font-weight:700; padding:2px 8px; border-radius:2px;">建設事業部</span>
-                  雑用工・多能工（建築現場補助・軽作業請負）
+                  <span style="background:#4a3010; color:white; font-size:0.7rem; font-weight:700; padding:2px 8px; border-radius:2px;">多能工</span>
+                  養生・資材移動・搬入搬出補助・各種作業補助
                 </span>
                 <span style="display:inline-flex; align-items:center; gap:8px;">
-                  <span style="background:#1a2a6e; color:white; font-size:0.7rem; font-weight:700; padding:2px 8px; border-radius:2px;">3Dホログラム</span>
-                  3D GHOST® 裸眼ホログラムサイネージ（代理店）
+                  <span style="background:var(--navy); color:white; font-size:0.7rem; font-weight:700; padding:2px 8px; border-radius:2px;">現場支援</span>
+                  工程支援・人員応援・現場環境整備
                 </span>
               </div>
             </td>
@@ -1885,7 +1852,7 @@
           <tr style="border-bottom: 1px solid var(--border);">
             <th style="padding: 18px 24px; text-align: left; font-weight: 600; color: var(--navy); background: var(--cream-dark); font-family: 'Noto Serif JP', serif;">E-mail</th>
             <td style="padding: 18px 24px; color: var(--text-mid);">
-              <a href="mailto:info@ecohausing.com" style="color: var(--green); text-decoration: none; font-weight: 500;">info@ecohausing.com</a>
+              <a href="mailto:info@ecohousing.biz" style="color: var(--green); text-decoration: none; font-weight: 500;">info@ecohousing.biz</a>
             </td>
           </tr>
           <tr>
@@ -1932,7 +1899,7 @@
           <span style="font-size: 1.2rem;">✉️</span>
           <div>
             <p style="font-size: 0.72rem; color: var(--text-light);">E-mail</p>
-            <a href="mailto:info@ecohausing.com" style="font-size: 0.9rem; color: var(--green); font-weight: 600; text-decoration: none;">info@ecohausing.com</a>
+            <a href="mailto:info@ecohousing.biz" style="font-size: 0.9rem; color: var(--green); font-weight: 600; text-decoration: none;">info@ecohousing.biz</a>
           </div>
         </div>
       </div>
@@ -1948,8 +1915,8 @@
 </section>
 <!-- FOOTER -->
 <footer>
-  <div class="footer-logo">株式会社エコハウジング</div>
-  <p>© 2026 株式会社エコハウジング All rights reserved.</p>
+  <div class="footer-logo">（株）エコハウジング</div>
+  <p>© 2026 （株）エコハウジング All rights reserved.</p>
 </footer>
 <script>
   // Scroll reveal
